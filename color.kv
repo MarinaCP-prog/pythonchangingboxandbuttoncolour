@@ -1,0 +1,44 @@
+#:kivy 2.1.0
+#:import utils kivy.utils
+<MyGridLayout>
+    name:name
+    pizza: pizza
+    colour: colour
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Name"
+            TextInput:
+                id: name
+                multiline: False
+                background_normal:''
+                background_color: utils.get_color_from_hex('#FBDCFF')
+
+            Label:
+                text: "Favourite pizza"
+            TextInput:
+                id: pizza
+                multiline: False
+
+            Label:
+                text: "Favourite colour"
+            TextInput:
+                id: colour
+                multiline: False
+
+        Button:
+            text: "Submit"
+            font_size:32 
+            on_press: root.press()
+            #RGB - A
+            background_normal:''
+            #background_color: (238/255.0,250/255.0,0/255.0,1)
+
+            # After importing utils. kivy.utils
+            background_color: utils.get_color_from_hex('#AAFFEC')
